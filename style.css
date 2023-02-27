@@ -670,8 +670,8 @@
     .jobsContainer .sideCategoryContainer {
         width: 30%;
         height: 90vh;
-        overflow-y: scroll;
-        max-width: 360px;
+        overflow-y: auto;
+        max-width: 360px;   
     }
 
     .jobsContainer .sideCategoryContainer h3,

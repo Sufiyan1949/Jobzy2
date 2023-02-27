@@ -24,18 +24,18 @@
                             <h1>Create Account,</h1>
                             <p>Please Sign up to start using our all the services</p>
                         </div>
-                        <form action="">
+                        <form action="signup.php" method="post">
                             <div class="mainContainer">
-                                <input type="text" placeholder="Enter your email" name="" required>
+                                <input type="text" placeholder="Enter your email" name="email" required>
 
-                                <input type="password" placeholder="Enter Your Password" name="" required>
+                                <input type="password" placeholder="Enter Your Password" name="pass" required>
                                 <img src="assets/images/showpass.svg" id="show" alt="" srcset="">
 
-                                <input type="password" placeholder="Confirms Your Password" name="" required>
+                                <input type="password" placeholder="Confirms Your Password" name="cpass" required>
                                 <img src="assets/images/showpass.svg" class="show" id="show"
                                     onclick="aud_show_unshow(this)">
 
-                                <button type="submit">Sign Up</button>
+                                <button name="signup" type="submit">Sign Up</button>
                                 <div class="flexCH">
                                     <p>Already have an account? </p>    
                                     <a href="signin.html"><b>Login</b></a>
@@ -50,7 +50,14 @@
     </div>
 
 
-    <script src="js.js"></script>
+    <script src="script.js"></script>
+
+    <?php
+        if(isset($_POST['signup'])){
+            extract($_POST);
+            echo "<script>signup($email, $pass, $cpass);</script>";
+        }
+    ?>
 </body>
 
 </html>
