@@ -1,0 +1,1327 @@
+    * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+        font-family: sans-serif;
+        /* border: .5px solid rgba(255, 255, 255, 0.541); */
+    }
+    
+     :root {
+        --primary: #07F49E;
+        --color_heading: rgba(255, 255, 255, 0.9);
+        --color_subheading: rgba(255, 255, 255, 0.7);
+        --min_height: 800px;
+        --max_height: 2000px;
+    }
+    
+    html,
+    body {
+        width: 100%;
+        height: 100%;
+        min-height: 100dvh;
+        background-color: black;
+    }
+    
+    .gradientContainer {
+        width: 100%;
+        height: 100%;
+        min-height: 100%;
+        background: linear-gradient(110deg, rgba(66, 4, 126, 0.8) 0%, rgba(7, 244, 158, 0.5) 100%);
+    }
+    
+    .gradientContainer .blackLayer {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        background: linear-gradient(110deg, rgba(26, 26, 26, .75) 0%, rgba(0, 0, 0, .90) 100%);
+        backdrop-filter: blur(60px);
+    }
+    
+    .content {
+        width: 100%;
+        height: 100%;
+        max-width: 2100px;
+        display: block;
+        overflow-y: auto;
+    }
+    
+    .flex {
+        display: flex;
+    }
+    
+    .flexCH {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .flexCV {
+        display: flex;
+        align-items: center;
+    }
+    
+    .flexC {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .flexColumn {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .flexColumnCH {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .flexColumnCV {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    /*Navbar Start*/
+    
+    .navbar {
+        width: 100%;
+        height: 75px;
+        display: flex;
+        align-items: center;
+    }
+    
+    .navbar .navbarItemContainer,
+    .navbar .navbarItemContainer .logo,
+    .navbar .navbarItemContainer .navigationLinks,
+    .navbar .navbarItemContainer .callToActions {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: fit-content;
+        flex: 1;
+    }
+    
+    .navbar .navbarItemContainer .logo {
+        justify-content: start;
+        padding-left: 1.5rem;
+    }
+    
+    .navbar .navbarItemContainer .logo img {
+        max-width: 180px;
+    }
+    
+    .navbar .navbarItemContainer .navigationLinks {
+        flex: 2;
+    }
+    
+    .navbar .navbarItemContainer .navigationLinks a {
+        text-decoration: none;
+        color: var(--color_heading);
+        tab-size: 1rem;
+        opacity: .4;
+        padding: 0 20px;
+        letter-spacing: .8px;
+        font-weight: 600;
+        transition: opacity .7s;
+    }
+    
+    .navbar .navbarItemContainer .navigationLinks .active,
+    .navbar .navbarItemContainer .navigationLinks a:hover {
+        color: var(--color_heading);
+        opacity: 1;
+    }
+    
+    .navbar .navbarItemContainer .navigationLinks .active {
+        font-size: 1.06rem;
+        font-weight: 700;
+    }
+    
+    .navbar .navbarItemContainer .callToActions {
+        justify-content: end;
+        padding-right: 1.5rem;
+    }
+    
+    .navbar .navbarItemContainer .callToActions a,
+    .btn {
+        padding: 12px 32px;
+        font-weight: 700;
+        font-size: 1rem;
+        color: white;
+        border: none;
+        cursor: pointer;
+        text-decoration: none;
+        letter-spacing: 1px;
+        border-radius: 50px;
+        transition: all 0.3s ease 0s;
+        outline: none;
+        background-color: var(--primary);
+    }
+    
+    .navbar .navbarItemContainer .callToActions a:hover {
+        box-shadow: 0px 6px 20px rgba(46, 229, 157, 0.4);
+        transform: scale(.95);
+    }
+    /*Navbar End*/
+    /*Hero Section Start*/
+    
+    .heroSection {
+        width: 100%;
+        min-height: var(--min_height);
+        position: relative;
+    }
+    
+    .heroSection .shapesContainer {
+        width: 100%;
+        display: flex;
+        position: absolute;
+    }
+    
+    .heroSection .heroContainer {
+        width: 100%;
+        height: 60%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: absolute;
+    }
+    
+    .heroSection .shapesContainer :first-child {
+        width: clamp(100px, 20vw, 400px);
+        max-width: 300px;
+        margin-top: 60px;
+    }
+    
+    .heroSection .shapesContainer :last-child {
+        width: clamp(70px, 14vw, 250px);
+        position: absolute;
+        margin-top: 40px;
+        right: 60px;
+    }
+    
+    .heroSection .heroContainer h1 {
+        letter-spacing: 2px;
+        word-spacing: 8px;
+        color: var(--color_heading);
+        font-size: clamp(1.8rem, 4vw, 4rem);
+        ;
+        margin: 0 50px;
+        text-align: center;
+    }
+    
+    .heroSection .heroContainer .searchContainer {
+        width: clamp(720px, 70vw, 1200px);
+        display: flex;
+        border: 1.2px solid rgba(255, 255, 255, 0.06);
+        padding: 10px 10px 10px 20px;
+        border-radius: 300px;
+        background: linear-gradient(100deg, rgba(100, 100, 100, 0.3) 0%, rgba(100, 100, 100, 0.15) 56%, rgba(96, 104, 100, 0.3) 100%);
+        margin-top: 120px;
+    }
+    
+    .heroSection .heroContainer .searchContainer .inputTitle,
+    .heroSection .heroContainer .searchContainer .inputLocation {
+        display: flex;
+        align-items: center;
+        flex: 1;
+    }
+    
+    .heroSection .heroContainer .searchContainer .inputTitle input[type=text],
+    .heroSection .heroContainer .searchContainer .inputLocation input[type=text] {
+        width: 100%;
+        background: transparent;
+        outline: none;
+        border: none;
+        padding: 6px 12px;
+        color: var(--color_subheading);
+    }
+    
+    .heroSection .heroContainer .searchContainer .inputTitle .box,
+    .heroSection .heroContainer .searchContainer .inputLocation .box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 32px;
+        height: 32px;
+        background-color: #d9d9d95e;
+        padding: 10px;
+        border-radius: 12px;
+        backdrop-filter: blur(20px)
+    }
+    
+    .heroSection .heroContainer .searchContainer .inputTitle .box img,
+    .heroSection .heroContainer .searchContainer .inputLocation .box img {
+        max-width: 16px;
+        max-height: 16px;
+    }
+    
+    .heroSection .heroContainer .searchContainer .divider {
+        width: 2px;
+        border-radius: 2px;
+        background-color: rgba(255, 255, 255, 0.2);
+        margin: 3px 24px;
+    }
+    
+    .heroSection .heroContainer .searchContainer .btn {
+        padding: 16px 44px;
+        font-size: 1.2rem;
+    }
+    
+    .heroSection .heroContainer .searchContainer .btn:hover,
+    .footer .footerNewsletter .newsletterContainer .btn:hover {
+        box-shadow: 0px 2px 20px rgba(46, 229, 157, 0.4);
+        transform: scale(.95);
+    }
+    /*Hero Section End*/
+    /*Category Section Start*/
+    
+    .categorySection {
+        width: 100%;
+        min-height: var(--min_height);
+        position: relative;
+    }
+    
+    .categorySection .categoryShape {
+        position: absolute;
+        width: 100%;
+    }
+    
+    .categorySection .categoryShape img {
+        position: absolute;
+        top: -140px;
+        right: 0px;
+        width: clamp(40px, 10vw, 120px);
+    }
+    
+    .categorySection .categoryContent {
+        position: absolute;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    
+    .categorySection .categoryContent h2,
+    .popularJobsSection .popularJobsTitleContainer h2,
+    .categories .categoryContent h2 {
+        color: var(--color_heading);
+        letter-spacing: 1.5px;
+        word-spacing: 4px;
+        font-size: clamp(1.5rem, 4vw, 2.8rem);
+        text-align: center;
+    }
+    
+    .categorySection .categoryContent p,
+    .categorySection .categoryContent h2 {
+        padding: 0 24px;
+    }
+    
+    .categorySection .categoryContent p,
+    .popularJobsSection .popularJobsTitleContainer p,
+    .categories .categoryContent p {
+        color: var(--color_subheading);
+        letter-spacing: .8px;
+        word-spacing: 2px;
+        font-size: clamp(.8rem, 3vw, 1.4rem);
+        margin-top: 12px;
+        font-weight: 100;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        text-align: center;
+    }
+    
+    .categoryCardGrid {
+        width: 100%;
+        max-width: 1400px;
+        display: grid;
+        padding: 24px;
+        margin-bottom: 80px;
+        grid-row-gap: 25px;
+        grid-column-gap: 25px;
+        margin-top: 50px;
+        --auto-grid-min-size: 300px;
+        grid-template-columns: repeat(auto-fill, minmax(var(--auto-grid-min-size), 1fr));
+    }
+    
+    .categoryCardGrid .categoryCard {
+        min-width: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem;
+        border-radius: 32px;
+        cursor: pointer;
+        background: rgba(255, 238, 238, 0.05);
+        transition: all ease .3s;
+    }
+    
+    .categoryCardGrid .categoryCard:hover {
+        transform: translateY(-12px);
+        box-shadow: 0px 4px 12px rgba(236, 255, 234, 0.06);
+    }
+    
+    .categoryCardGrid .categoryCard img {
+        width: 90px;
+    }
+    
+    .categoryCardGrid .categoryCard h3 {
+        margin: 24px 0 0 0;
+        letter-spacing: 1.2px;
+        word-spacing: 2px;
+        text-align: center;
+        color: var(--color_heading);
+    }
+    
+    .categoryCardGrid .categoryCard p {
+        margin: 10px 0 0 0;
+        letter-spacing: 1.2px;
+        word-spacing: 2px;
+        color: var(--color_subheading);
+    }
+    /*Category Section End*/
+    /*Popular Jobs Section Start*/
+    
+    .popularJobsSection {
+        width: 100%;
+        min-height: var(--min_height);
+        padding: 24px;
+        display: flex;
+        justify-content: center;
+        margin: 80px auto 0 auto;
+        max-width: 1400px;
+    }
+    
+    .popularJobsSection .popularJobsTitleContainer,
+    .popularJobsSection .popularJobsCardContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 50%;
+    }
+    
+    .popularJobsSection .popularJobsTitleContainer h2,
+    .popularJobsSection .popularJobsTitleContainer p {
+        text-align: left;
+    }
+    
+    .popularJobsSection .popularJobsTitleContainer img {
+        max-width: 760px;
+        width: 120%;
+        margin-left: -60px;
+    }
+    
+    .popularJobsCardContainer {
+        align-items: end;
+    }
+    
+    .popularJobsSection .popularJobsCardContainer .popularJobsCard {
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 1.66rem;
+        border-radius: 2rem;
+        min-width: 460px;
+        width: 75%;
+        cursor: pointer;
+        margin: 8px 0;
+        height: min-content;
+        transition: all ease .3s;
+    }
+    
+    .popularJobsSection .popularJobsCardContainer .popularJobsCard:hover {
+        transform: scale(.96);
+    }
+    
+    .popularJobsCard h3 {
+        color: var(--color_heading);
+        margin-bottom: 4px;
+    }
+    
+    .popularJobsCard h5 {
+        color: var(--color_subheading);
+        margin-bottom: 10px;
+    }
+    
+    .popularJobsCard .upperContainer .flex {
+        margin-bottom: 4px;
+    }
+    
+    .popularJobsCard .upperContainer .text {
+        width: 75%;
+    }
+    
+    .popularJobsCard .upperContainer .brandIcon {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto;
+        border-radius: 20%;
+        background-color: #07f49d5b;
+    }
+    
+    .popularJobsCard .upperContainer .flex .location {
+        width: 10px;
+        margin-bottom: -2.6px;
+    }
+    
+    .popularJobsCard .upperContainer .flex .rupee {
+        width: 14px;
+        margin-bottom: -2.6px;
+    }
+    
+    .popularJobsCard p {
+        color: var(--color_subheading);
+        opacity: .6;
+        font-weight: 100;
+        margin: 0 4px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    .popularJobsCard .lowerContainer {
+        margin-top: 3px;
+    }
+    
+    .popularJobsCard .lowerContainer .more {
+        margin-top: 12px;
+        font-size: 12px;
+    }
+    
+    .popularJobsCard .lowerContainer .skills {
+        background: rgba(217, 217, 217, 0.1);
+        border-radius: 8px;
+        font-size: 12px;
+        padding: 4px 8px;
+        margin-top: 10px;
+    }
+    /*Popular Jobs Section End*/
+    /*Footer Start*/
+    
+    .footer {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 60px 60px 0 0;
+        background: rgba(255, 255, 255, 0.1);
+    }
+    
+    .footerMain {
+        width: 100%;
+        display: flex;
+        max-width: 1400px;
+        padding: 3rem 3rem 2.5rem 3rem;
+    }
+    
+    .footer .footerAbout {
+        flex: 1.9;
+    }
+    
+    .footer .footerAbout img {
+        max-width: 220px;
+        margin-bottom: 1rem;
+    }
+    
+    .footer .footerAbout p,
+    .footer .footerNewsletter p,
+    .footer .footerCopyRight p {
+        max-width: 380px;
+        text-align: justify;
+        margin-bottom: 1.2rem;
+        font-weight: 300;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: var(--color_subheading);
+        opacity: .8;
+    }
+    
+    .footer .footerAbout .socialText {
+        margin-bottom: 12px;
+    }
+    
+    .footer .footerAbout .socialIconContainer .socialIcon {
+        height: 40px;
+        width: 40px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 16px;
+        cursor: pointer;
+        background-color: rgba(255, 255, 255, 0.1);
+        transition: all ease .4s;
+    }
+    
+    .footer .footerAbout .socialIconContainer .socialIcon:hover {
+        transform: translateY(-4px);
+        background-color: rgba(255, 255, 255, 0.3);
+    }
+    
+    .footer .footerAbout .socialIconContainer .socialIcon img {
+        height: auto;
+        width: 24px;
+        margin: auto;
+    }
+    
+    .footer .footerLinks {
+        flex: 1.2;
+        padding: 0 2rem;
+    }
+    
+    .footer .footerLinks h3 {
+        color: var(--primary);
+        opacity: .7;
+        margin: 12px 0 1.8rem 0;
+    }
+    
+    .footer .footerLinks .linksContainer {
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+    }
+    
+    .footer .footerLinks .linksContainer a {
+        text-decoration: none;
+        width: fit-content;
+        font-weight: 500;
+        font-size: 14px;
+        color: var(--color_heading);
+        opacity: .55;
+        transition: all ease-in .3s;
+    }
+    
+    .footer .footerLinks .linksContainer a:hover {
+        opacity: 1;
+        text-decoration: underline;
+    }
+    
+    .footer .footerNewsletter {
+        flex: 1.9;
+    }
+    
+    .footer .footerNewsletter h2 {
+        font-size: clamp(18px, 2vw, 30px);
+        color: var(--color_heading);
+        opacity: .95;
+        margin: 2px 0 4px 0;
+    }
+    
+    .footer .footerNewsletter .newsletterContainer {
+        width: clamp(300px, 30vw, 440px);
+        display: flex;
+        border: 1.2px solid rgba(255, 255, 255, 0.06);
+        padding: 8px 8px 8px 20px;
+        border-radius: 300px;
+        background: linear-gradient(100deg, rgba(100, 100, 100, 0.3) 0%, rgba(100, 100, 100, 0.15) 56%, rgba(96, 104, 100, 0.3) 100%);
+        margin-top: 30px;
+    }
+    
+    .footer .footerNewsletter .newsletterContainer input[type=email] {
+        width: 100%;
+        background: transparent;
+        outline: none;
+        border: none;
+        padding: 6px 12px;
+        color: var(--color_subheading);
+    }
+    
+    .footer .footerNewsletter .newsletterContainer .btn {
+        padding: 12px 24px;
+        font-size: .9rem;
+    }
+    
+    .footer .footerCopyRight {
+        width: 100%;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 2rem 2rem 1rem 2rem;
+        display: flex;
+        justify-content: center;
+        color: var(--color_subheading);
+    }
+    
+    .footer .footerCopyRight p a {
+        text-decoration: none;
+        color: var(--color_heading);
+        transition: color ease .4s;
+    }
+    
+    .footer .footerCopyRight p a:hover {
+        color: var(--primary);
+    }
+    /*Footer End*/
+    /*Jobs Page*/
+    
+    .jobsContainer {
+        width: 100%;
+        max-width: 1400px;
+        height: calc(100%-75px);
+        display: flex;
+        margin: 0 auto;
+        justify-content: center;
+    }
+    
+    .jobsContainer .sideCategoryContainer {
+        width: 30%;
+        height: 90vh;
+        overflow-y: scroll;
+        max-width: 360px;
+    }
+    
+    .jobsContainer .sideCategoryContainer h3,
+    .jobsContainer .jobsListContainer h3 {
+        letter-spacing: 1.2px;
+        word-spacing: 2px;
+        margin: 20px 8px;
+        color: var(--color_heading);
+    }
+    
+    .jobsContainer .sideCategoryContainer .otherCategoryCard {
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        padding: 16px;
+        margin: 12px 8px;
+        transition: all ease .3s;
+    }
+    
+    .jobsContainer .sideCategoryContainer .otherCategoryCard:hover {
+        transform: scale(.96);
+    }
+    
+    .jobsContainer .sideCategoryContainer .otherCategoryCard .flex img {
+        width: 30%;
+        min-width: 60px;
+        max-width: 100px;
+    }
+    
+    .jobsContainer .sideCategoryContainer .otherCategoryCard .flex .text {
+        display: flex;
+        flex-direction: column;
+        margin: 0 12px;
+    }
+    
+    .sideCategoryContainer .otherCategoryCard .flex .text h3 {
+        letter-spacing: 1.2px;
+        word-spacing: 2px;
+        font-size: clamp(1rem, .5vw, 1.1rem);
+        color: var(--color_heading);
+    }
+    
+    .sideCategoryContainer .otherCategoryCard .flex .text p {
+        letter-spacing: 1.2px;
+        word-spacing: 2px;
+        color: var(--color_subheading);
+        font-size: 14px;
+        padding-left: 10px;
+    }
+    
+    .jobsContainer .jobsListContainer {
+        width: 70%;
+        height: 90vh;
+        overflow-y: auto;
+        max-width: 600px;
+        padding: 0 24px;
+    }
+    
+    .jobsListContainer .popularJobsCard {
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 1.66rem;
+        border-radius: 2rem;
+        min-width: 460px;
+        width: 100%;
+        cursor: pointer;
+        margin: 12px 0;
+        height: min-content;
+        transition: all ease .3s;
+    }
+    
+    .jobsListContainer .popularJobsCard:hover {
+        transform: scale(.96);
+    }
+    /*Jobs Page*/
+    /*About Page*/
+    
+    .aboutContainer {
+        width: 100%;
+        height: calc(100%-75px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow-y: auto;
+    }
+    
+    .aboutMe {
+        max-width: 1400px;
+        border-radius: 40px;
+        padding: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        margin: 40px 0;
+        background: rgba(217, 217, 217, 0.1);
+    }
+    
+    .aboutMe .logo {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+    
+    .aboutMe .logo .glow {
+        position: absolute;
+        border-radius: 80px;
+        width: 100%;
+        height: 50%;
+        background: rgba(7, 244, 158, 0.4);
+        filter: blur(200px);
+    }
+    
+    .aboutMe .logo img {
+        max-width: 300px;
+    }
+    
+    .aboutMe .logo #certificate {
+        position: absolute;
+        z-index: 1;
+        max-width: 50%;
+    }
+    
+    .aboutMe .info {
+        width: 50%;
+        padding: 20px;
+    }
+    
+    .aboutMe h1 {
+        font-weight: 700;
+        font-size: 44px;
+        margin-bottom: 24px;
+        letter-spacing: 0.08em;
+        color: var(--color_heading);
+    }
+    
+    .aboutMe h3 {
+        font-weight: 700;
+        font-size: 32px;
+        letter-spacing: 0.08em;
+        color: var(--color_heading);
+    }
+    
+    .aboutMe p {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: 200;
+        font-size: 16px;
+        text-align: justify;
+        margin-top: 20px;
+        letter-spacing: 0.01em;
+        color: var(--color_subheading);
+    }
+    /*About Page*/
+    /*Authentication Page*/
+    
+    .gradientContainer .authContainer {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow-y: auto;
+        padding: 24px;
+    }
+    
+    .authContainer .contentMain {
+        max-width: 1400px;
+        border-radius: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        padding: 50px 0;
+        height: fit-content;
+        max-height: 900px;
+        min-height: 460px;
+        background: rgba(217, 217, 217, 0.1);
+    }
+    
+    .authContainer .contentMain .logo {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        height: 100%;
+    }
+    
+    .authContainer .contentMain .logo .glow {
+        position: absolute;
+        border-radius: 60px;
+        width: 100%;
+        height: 70%;
+        /*background-color: aqua;*/
+        background: rgba(7, 244, 158, 0.4);
+        filter: blur(260px);
+    }
+    
+    .contentMain .logo img {
+        position: absolute;
+        z-index: 1;
+        max-width: 560px;
+        width: 110%;
+    }
+    
+    .contentMain .info {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .contentMain .info .headingsContainer {
+        text-align: left;
+        max-width: 500px;
+        width: 80%;
+    }
+    
+    .contentMain .info .headingsContainer h1 {
+        font-weight: 700;
+        font-size: 38px;
+        letter-spacing: 0.08em;
+        color: var(--color_heading);
+    }
+    
+    .contentMain .info .headingsContainer p {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: 200;
+        font-size: 20px;
+        letter-spacing: 1;
+        margin-bottom: 24px;
+        color: var(--color_subheading);
+    }
+    
+    .contentMain .info form {
+        color: var(--color_subheadings);
+        max-width: 500px;
+        width: 80%;
+    }
+    
+    .contentMain .info form .flexCH {
+        color: var(--color_subheading);
+        gap: 8px;
+        margin-top: 30px;
+    }
+    
+    .contentMain .info form .flexCH a {
+        text-decoration: none;
+        font-weight: 500;
+        opacity: .8;
+        color: var(--primary);
+    }
+    
+    .contentMain .info form input[type=text],
+    .contentMain .info form input[type=password] {
+        width: 98%;
+        margin: 10px 0px;
+        border-radius: 12px;
+        padding: 18px 18px;
+        background: rgba(217, 217, 217, 0.15);
+        box-sizing: border-box;
+        box-shadow: none;
+        border: none;
+        outline: none;
+        color: var(--color_heading);
+        font-weight: 400;
+        font-size: 16px;
+        letter-spacing: 0.08em;
+    }
+    
+    .contentMain .info form input[type=text]::placeholder,
+    .contentMain .info form input[type=password]::placeholder {
+        color: var(--color_subheading);
+        opacity: .5;
+    }
+    
+    .subcontainer {
+        display: flex;
+        padding: 0 16px 0 10px;
+        margin: 8px 0 12px 0;
+        justify-content: space-between;
+    }
+    
+    .subcontainer .checkbox span {
+        color: var(--color_subheading);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: 200;
+    }
+    
+    .subcontainer a {
+        color: var(--primary);
+        opacity: .8;
+    }
+    
+    .contentMain .info form #show {
+        margin-left: -40px;
+        cursor: pointer;
+    }
+    
+    .contentMain .info form button {
+        background: rgba(0, 0, 0, 0.9);
+        backdrop-filter: blur(50px);
+        color: #ffffff;
+        padding: 14px 20px;
+        border-radius: 12px;
+        font-size: 18px;
+        margin: 30px 0 0 0;
+        border: none;
+        outline: none;
+        width: 98%;
+        max-width: 500px;
+    }
+    
+    .contentMain .info form button:hover {
+        opacity: 0.6;
+        cursor: pointer;
+    }
+    /*Authentication Page*/
+    /*Authentication Page*/
+    
+    .categoryContainer {
+        width: 100%;
+        height: 100;
+    }
+    
+    .categories {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        max-width: 1400px;
+        justify-content: center;
+    }
+    
+    .categories .categoryContent h2 {
+        padding: 20px 24px 0 24px;
+        margin-top: 20px;
+    }
+    /*Authentication Page*/
+    
+    @-moz-document url-prefix() {
+        /* Disable scrollbar Firefox */
+        .sideCategoryContainer {
+            scrollbar-width: none;
+        }
+        .jobsListContainer {
+            scrollbar-width: none;
+        }
+    }
+    
+    @media screen and (max-width: 400px) {
+        .contentMain {
+            display: grid;
+            place-items: center;
+        }
+        .contentMain .logo {
+            display: none;
+        }
+        .contentMain .logo .glow {
+            display: none;
+        }
+        .contentMain .info {
+            width: 100%;
+        }
+        .contentMain .info form {
+            color: #ffffff;
+            max-width: 100%;
+            width: 100%;
+        }
+        .contentMain .info h1 {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 24px;
+            letter-spacing: 0.05em;
+            color: var(--color_heading);
+        }
+        .contentMain .info p {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 10px;
+            line-height: 13.5px;
+            letter-spacing: 1;
+        }
+        .contentMain .info form input[type=text],
+        input[type=password] {
+            width: 98%;
+            border-radius: 5px;
+            padding: 15px 18px;
+            box-sizing: border-box;
+            overflow: hidden;
+            font-size: 14px;
+        }
+        .contentMain .info form button {
+            width: 100%;
+        }
+    }
+    
+    @media screen and (max-width: 680px) {
+         :root {
+            --max_height: 2000px;
+        }
+        /* Home Page */
+        .navbar {
+            height: 65px;
+        }
+        .navbar .navbarItemContainer .navigationLinks {
+            display: none;
+        }
+        .navbar .navbarItemContainer .logo {
+            padding-left: .5rem;
+        }
+        .navbar .navbarItemContainer .logo img {
+            max-width: 110px;
+        }
+        .navbar .navbarItemContainer .callToActions {
+            justify-content: end;
+            padding-right: .5rem;
+        }
+        .navbar .navbarItemContainer .callToActions a,
+        .btn {
+            padding: 8px 24px;
+            font-size: .8rem;
+        }
+        /*Hero Section Start*/
+        .heroSection .heroContainer h1 {
+            font-size: clamp(1.7rem, 4vw, 4rem);
+            margin: 0 20px;
+        }
+        .heroSection .heroContainer .searchContainer {
+            width: 90%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            padding: 20px;
+            border-radius: 30px;
+            margin-top: 120px;
+        }
+        .heroSection .heroContainer .searchContainer .inputTitle,
+        .heroSection .heroContainer .searchContainer .inputLocation {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            flex: 1;
+        }
+        .heroSection .heroContainer .searchContainer .inputTitle input[type=text],
+        .heroSection .heroContainer .searchContainer .inputLocation input[type=text] {
+            padding: 6px 0;
+            margin: 0 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .heroSection .heroContainer .searchContainer .btn {
+            width: 70%;
+            padding: 12px 24px;
+            font-size: 1rem;
+            margin-top: 24px;
+        }
+        .heroSection .heroContainer .searchContainer .btn:hover,
+        .footer .footerNewsletter .newsletterContainer .btn:hover {
+            box-shadow: 0px 2px 20px rgba(46, 229, 157, 0.4);
+            transform: scale(.95);
+        }
+        /*Hero Section End*/
+        /*Popular Jobs Section Start*/
+        .popularJobsSection {
+            width: 100%;
+            height: 60%;
+            min-height: var(--max_height);
+            max-height: var(--max_height);
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 80px auto 0 auto;
+            max-width: 1400px;
+        }
+        .popularJobsSection .popularJobsTitleContainer,
+        .popularJobsSection .popularJobsCardContainer {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+        }
+        .popularJobsSection .popularJobsTitleContainer h2,
+        .popularJobsSection .popularJobsTitleContainer p {
+            text-align: center;
+        }
+        .popularJobsSection .popularJobsTitleContainer img {
+            max-width: 560px;
+            width: 100%;
+            margin: 0 auto;
+        }
+        .popularJobsCardContainer {
+            align-items: center;
+        }
+        .popularJobsSection .popularJobsCardContainer .popularJobsCard {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 1.66rem;
+            border-radius: 2rem;
+            width: 90%;
+            max-width: 460px;
+            cursor: pointer;
+            margin: 8px 0;
+            height: min-content;
+            transition: all ease .3s;
+        }
+        .popularJobsCard p {
+            max-width: 100%;
+        }
+        .popularJobsCard .lowerContainer .skills {
+            background: rgba(217, 217, 217, 0.1);
+            border-radius: 8px;
+            font-size: 12px;
+            padding: 4px 8px;
+            margin-top: 10px;
+        }
+        /*Popular Jobs Section End*/
+        /* Home Page End*/
+        /* Footer Section */
+        .footer {
+            padding-top: 6px;
+            border-radius: 30px 30px 0 0;
+        }
+        .footerMain {
+            flex-direction: column;
+            gap: 20px;
+            padding: 1.5rem 1.5rem 2rem 1.5rem;
+        }
+        .footer .footerAbout img {
+            max-width: 150px;
+            margin-bottom: .6rem;
+        }
+        .footer .footerLinks {
+            padding: 0;
+        }
+        .footer .footerLinks h3 {
+            margin: 12px 0 .8rem 0;
+        }
+        .footer .footerLinks .linksContainer {
+            gap: .45rem;
+        }
+        .footer .footerNewsletter .newsletterContainer {
+            width: clamp(300px, 30vw, 440px);
+            padding: 6px 6px 6px 12px;
+            margin-top: 20px;
+        }
+        .footer .footerNewsletter .newsletterContainer .btn {
+            padding: 8px 16px;
+            font-size: .74rem;
+        }
+        .footer .footerAbout p,
+        .footer .footerNewsletter p,
+        .footer .footerCopyRight p {
+            max-width: 90%;
+        }
+        /* Footer Section */
+        .aboutMe .info {
+            width: 100%;
+        }
+        .aboutMe .info form {
+            color: #ffffff;
+            max-width: 100%;
+            width: 100%;
+        }
+        .aboutMe .info h1 {
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 24px;
+            letter-spacing: 0.05em;
+            color: var(--color_heading);
+        }
+        .aboutMe h3 {
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 53px;
+            letter-spacing: 0.08em;
+            color: var(--color_subheading);
+        }
+        .aboutMe .info p {
+            font-weight: 400;
+            font-size: 10px;
+            line-height: 13.5px;
+            letter-spacing: 1;
+        }
+        .aboutMe .info form button {
+            width: 100%;
+        }
+        .contentMain {
+            display: grid;
+            place-items: center;
+        }
+        .contentMain .logo {
+            display: none;
+        }
+        .contentMain .logo .glow {
+            display: none;
+        }
+        .contentMain .info {
+            width: 100%;
+        }
+        .contentMain .info form {
+            color: #ffffff;
+            max-width: 100%;
+            width: 100%;
+        }
+        .contentMain .info h1 {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 24px;
+            letter-spacing: 0.05em;
+            color: var(--color_heading);
+        }
+        .contentMain .info p {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 10px;
+            line-height: 13.5px;
+            letter-spacing: 1;
+        }
+        .contentMain .info form input[type=text],
+        input[type=password] {
+            width: 98%;
+            border-radius: 5px;
+            padding: 15px 18px;
+            box-sizing: border-box;
+            overflow: hidden;
+            font-size: 14px;
+        }
+        .contentMain .info form button {
+            width: 100%;
+        }
+    }
+    
+    @media screen and (max-width: 900px) {}
+    
+    .sideCategoryContainer::-webkit-scrollbar,
+    .jobsListContainer::-webkit-scrollbar {
+        width: 0px;
+    }
+    
+     ::-webkit-scrollbar {
+        width: 18px;
+    }
+    
+     ::-webkit-scrollbar-thumb {
+        background-clip: content-box;
+        border: 4px solid transparent;
+        border-radius: 9px;
+        background-color: rgba(255, 255, 255, 0.20);
+    }
+    
+     ::-webkit-scrollbar-thumb:hover {
+        background-color: rgba(255, 255, 255, 0.40);
+    }
