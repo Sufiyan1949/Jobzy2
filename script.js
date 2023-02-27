@@ -53,7 +53,7 @@ function setOtherCategory(parent) {
 
     for (let i = 0; i < len; i++) {
         const obj = category[i];
-        child += '<div class="otherCategoryCard"><div class="flex"><img src="assets/images/web.svg" alt=""><div class="text"><h3>' + obj.name + '</h3><p>210 Jobs</p></div></div></div>';
+        child += '<div class="otherCategoryCard" onclick="getJobs(1)"><div class="flex"><img src="assets/images/web.svg" alt=""><div class="text"><h3>' + obj.name + '</h3><p>210 Jobs</p></div></div></div>';
     }
     parent.innerHTML = child;
 
@@ -148,6 +148,7 @@ function searchJobs(parameters) {
 
 function getJobs(cid) {
     console.log(cid);
+    alert(cid);
     jobList = new Array();
     const xhttp = new XMLHttpRequest();
     xhttp.open("GET", "PhpApi-master/site/getcategorysjob.php?cid=" + cid, true);
