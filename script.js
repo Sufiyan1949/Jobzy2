@@ -42,7 +42,7 @@ function setCategory(parent) {
         if (i == 11 && document.title != "Job Categories")
             child += '<div class="categoryCard" onclick="window.location.href ="category.html"><h3>+' + (category.length - 12) + '</h3><p>Explore all</p></div>';
         else
-            child += '<div class="categoryCard" onclick="getJobs(' + obj.cid + ')"><img src="assets/images/web.svg" alt=""><h3>' + obj.name + '</h3><p>210 Jobs</p></div>';
+            child += `<div class="categoryCard" onclick="getJobs(${obj.cid})"><img src="assets/images/web.svg" alt=""><h3>${ obj.name}</h3><p>210 Jobs</p></div>`;
     }
     parent.innerHTML = child;
 }
@@ -141,51 +141,81 @@ function searchJobs(parameters) {
         }
     };
     xhttp.onload = function () {
-        var child = "<h3>Jobs</h3>";
-        var len = jobList.length;
-        console.log(len);
-        for (let i = 0; i < len; i++) {
-            const obj = jobList[i];
-            child += `<div class="popularJobsCard ">
-            <div class="upperContainer flex">
-                <div class="text">
-                    <h3>UI/UX Designer</h3>
-                    <h5>Facebook</h5>
-                    <div class="flex">
-                        <img class="location" src="assets/images/location.svg" alt="icon location">
-                        <p>Chennai, Tamil Nadu, India</p>
-                    </div>
-                    <div class="flex">
-                        <img class="rupee" src="assets/images/rupee.svg" alt="icon location">
-                        <p>8,00,000 - 12,00,000</p>
-                    </div>
-                </div>
-                <div class="brandIcon">
-
-                </div>
-            </div>
-            <div class="lowerContainer">
-                <p>Lorem ipsum dolor sit amet, consectetur elit consecr, sede lit do ...</p>
-                <div class="skillsContainer flex">
-                    <p class="skills">Adobe XD</p>
-                    <p class="skills">UI/UX Design</p>
-                    <p class="skills">Figma</p>
-                    <p class="skills">Figma</p>
-                    <p class="skills">illustrations</p>
-                    <p class="more">+2 more...</p>
-                </div>
-            </div>
-        </div>`;
-        }
-        parent.innerHTML = child;
+        setJobs();
     }
 }
 
 
+function getJobs(cid) {
+    console.log(cid);
+    jobList = new Array();
+    const xhttp = new XMLHttpRequest();
+    xhttp.open("GET", "PhpApi-master/site/getcategorysjob.php?cid=" + cid, true);
+    xhttp.send();
+
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            const obj = JSON.parse(this.responseText);
+            obj.forEach(element => {
+                jobList.push({
+                    jid: element.jid,
+                    title: element.title,
+                    description: element.description,
+                    duration: element.duration,
+                    location: element.location,
+                    company_name: element.company_name,
+                    skills: element.skills,
+                    links: element.links,
+                    publishedOn: element.publishedOn,
+                    cid: element.cid
+                });
+            });
+        }
+    };
+    xhttp.onload = function () {
+        setJobs();
+    }
+}
 
 
+function setJobs() {
+    var child = "<h3>Jobs</h3>";
+    var len = jobList.length;
+    console.log(len);
+    for (let i = 0; i < len; i++) {
+        const obj = jobList[i];
+        var skills = obj.skills.split(",");
+        var sk = "";
+        skills.forEach(str => {
+            sk += `<p class="skills">${str}</p>`;
+        })
+        child += `<div class="popularJobsCard ">
+        <div class="upperContainer flex">
+            <div class="text">
+                <h3>${obj.title}</h3>
+                <h5>${obj.company_name}</h5>
+                <div class="flex">
+                    <img class="location" src="assets/images/location.svg" alt="icon location">
+                    <p>${obj.location}</p>
+                </div>
+                <div class="flex">
+                    <p>${obj.publishedOn}</p>
+                </div>
+            </div>
+            <div class="brandIcon">
 
-
+            </div>
+        </div>
+        <div class="lowerContainer">
+            <p>${obj.description}</p>
+            <div class="skillsContainer flex">
+                ${sk}
+            </div>
+        </div>
+    </div>`;
+    }
+    document.querySelector(".jobsListContainer").innerHTML = child;
+}
 
 
 
